@@ -1,0 +1,140 @@
+              GraphicsWindow.Show()
+              GraphicsWindow.FontName = ("Adobe song Std L")
+              GraphicsWindow.Height = (700)
+              GraphicsWindow.Width = (700) 
+               
+           
+         
+             GraphicsWindow.Clear() 
+             GraphicsWindow.FontSize = ( 25 )
+             GraphicsWindow.DrawText ( 300 , 10 "Terms")  
+             GraphicsWindow.FontSize = ( 20 ) 
+             GraphicsWindow.DrawText ( 45 , 50 , "Terms in an expression are seperated by + & - and are joined by % and x")
+             GraphicsWindow.DrawText ( 45 , 70 , "Joining precedes seperation.") 
+            
+             GraphicsWindow.DrawText ( 300 , 100 , "Some examples:")
+             GraphicsWindow.DrawText ( 45 , 150 + 10 , "a + b ")
+             GraphicsWindow.DrawText ( 45 , 170 + 10 , "ab" )
+             GraphicsWindow.DrawText  (45 , 190 + 10 , "a x b ")
+             GraphicsWindow.DrawText (45 , 210  + 10 ,    "2(a + b) ") 
+             GraphicsWindow.DrawText ( 300 , 150 + 10 , "2 terms")
+             GraphicsWindow.DrawText ( 300 , 170 + 10 , "1 term") 
+             GraphicsWindow.DrawText ( 300 , 190 + 10 , "1 term because a x b = ab") 
+             GraphicsWindow.DrawText ( 300 , 210 + 10 , "1 term as 2 terms must be multiplied by a and b")
+             GraphicsWindow.DrawText ( 300 , 230 + 10 , "1 term")  
+             GraphicsWindow.DrawText (45 , 230 + 10 , "a       ") 
+             GraphicsWindow.DrawText  (45 , 232 + 10 , "_") 
+             GraphicsWindow.DrawText (45 , 250 + 10 , "b")  
+             GraphicsWindow.DrawText (45 , 270 + 10 , "a % b ")
+             GraphicsWindow.DrawText ( 300 , 270 + 10 , "1term because a % b = a")
+             GraphicsWindow.DrawText (479 , 270 + 10 , "_") 
+             GraphicsWindow.DrawText (479 , 290 + 10 , "b") 
+             GraphicsWindow.DrawText (45 , 310 + 10 , "a - 2") 
+             GraphicsWindow.DrawText (45 , 311 + 10 , "_") 
+             GraphicsWindow.DrawText (45 , 331 + 10 , "b")
+             GraphicsWindow.DrawText ( 300 , 310 + 10 , "2 terms")
+             GraphicsWindow.DrawText ( 45 , 360 , "a - 2")  
+             GraphicsWindow.DrawText  (45 , 361 , "___") 
+             GraphicsWindow.DrawText ( 54 , 379 , "b") 
+             GraphicsWindow.DrawText (300 , 360 , "1 term") 
+             GraphicsWindow.DrawText (45 , 400 , "abc") 
+             GraphicsWindow.DrawText (300 , 400 , "1 term") 
+             GraphicsWindow.DrawText (45 , 420 , "a+bc") 
+             GraphicsWindow.DrawText (300 ,420 , "2 terms") 
+             GraphicsWindow.DrawText (45 , 440 , "a + b + c") 
+             GraphicsWindow.DrawText (300 , 440 , "3 terms") 
+             GraphicsWindow.DrawText (45 , 460 , "a + b + c")
+             GraphicsWindow.DrawText (45 , 461 , "_______")  
+             GraphicsWindow.DrawText (70 , 479 , "2") 
+             GraphicsWindow.DrawText (300 , 460 , "1 term") 
+             GraphicsWindow.DrawText (45 , 500 ,"2(a + b + c)") 
+             GraphicsWindow.DrawText (300 , 500 , "1 term") 
+             GraphicsWindow.DrawText (250 , 550 , "Try some examples")
+             
+             
+            termsbutton = Controls.AddButton ("Start" , 200 , 590)
+            Controls.SetSize (termsbutton , 250 , 50) 
+            
+            Controls.ButtonClicked = buttonclicked 
+            
+            Sub buttonclicked 
+              
+               Sound.PlayClick()
+                                                                 GraphicsWindow.Clear() 
+                                                                 GraphicsWindow.Height = ( 500 ) 
+                                                    
+                                                button1  = Controls.AddButton  ("next" , 300 , 350) 
+                                                textbox1 = Controls.AddTextBox (300 , 280) 
+                                                Controls.SetSize (textbox1, 80  ,45) 
+                                                Controls.SetSize (button1 , 80 , 80) 
+                                                GraphicsWindow.DrawText ( 200  , 10 , "How many terms in the expression?") 
+                                                GraphicsWindow.DrawText ( 200  , 40 , "1) a" )  
+                                                GraphicsWindow.DrawText ( 250 , 280 , "Has")
+                                                GraphicsWindow.DrawText ( 400, 280 , "term(s)") 
+                                                Controls.ButtonClicked = buttonclickedquestion2 
+                                                                     EndSub 
+        Sub buttonclickedquestion2 
+          
+       Sound.PlayClick()
+       answer = Controls.GetTextBoxText (textbox1)
+       If answer = 1 Then 
+         result = result + 1
+         GraphicsWindow.DrawText ( 100 , 50 , "Correct!") 
+         Controls.ButtonClicked = buttonclickedcorrect1 
+       Else
+         
+         GraphicsWindow.Clear() 
+         GraphicsWindow.DrawText ( 250 , 50 , "Your previous answer was incorrect.") 
+         GraphicsWindow.DrawText ( 250 , 70 , "Would you like to try again?") 
+       EndIf 
+       EndSub
+
+                                                           sub buttonclickedcorrect1
+                                                                 GraphicsWindow.Clear() 
+                                                                 GraphicsWindow.Height = ( 500 ) 
+                                                                
+                                                button1  = Controls.AddButton  ("next" , 300 , 350) 
+                                                textbox1 = Controls.AddTextBox (300 , 280) 
+                                                Controls.SetSize (textbox1, 80  ,45) 
+                                                Controls.SetSize (button1 , 80 , 80) 
+                                                GraphicsWindow.DrawText ( 200  , 10 , "How many terms in the expression?") 
+                                                GraphicsWindow.DrawText ( 200  , 40 , "2) a + b" )  
+                                                GraphicsWindow.DrawText ( 250 , 280 , "Has")
+                                                GraphicsWindow.DrawText ( 400, 280 , "term(s)") 
+                                                Controls.ButtonClicked = buttonclickedquestion3 
+                                                                     EndSub 
+                                              
+           Sub buttonclickedquestion3 
+                                                                        
+             
+             Sound.PlayClick()
+       answer = Controls.GetTextBoxText (textbox1)
+       If answer = 2 Then 
+         result = result + 1 
+       EndIf   
+       
+       GraphicsWindow.Clear() 
+                                                                 GraphicsWindow.Height = ( 500 ) 
+                                                                
+                                                button1  = Controls.AddButton  ("next" , 300 , 350) 
+                                                textbox1 = Controls.AddTextBox (300 , 280) 
+                                                Controls.SetSize (textbox1, 80  ,45) 
+                                                Controls.SetSize (button1 , 80 , 80) 
+                                                GraphicsWindow.DrawText ( 200  , 10 , "How many terms in the expression?") 
+                                                GraphicsWindow.DrawText ( 200  , 40 , "2) a + b + c" )  
+                                                GraphicsWindow.DrawText ( 250 , 280 , "Has")
+                                                GraphicsWindow.DrawText ( 400, 280 , "term(s)") 
+                                                Controls.ButtonClicked = buttonclickedquestion4
+                                                                   EndSub
+                                              
+        Sub buttonclickedquestion4 
+                                                
+             Sound.PlayClick()
+       answer = Controls.GetTextBoxText (textbox1)
+       If answer = 3 Then 
+         result = result + 1 
+       EndIf                           
+                                                
+                                                TextWindow.Write (result) 
+                                                EndSub
+  
